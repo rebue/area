@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.github.rebue.common-pom</groupId>
+		<artifactId>sb-parent</artifactId>
+		<version>1.0.7</version>
+	</parent>
+
+	<groupId>com.github.rebue.area</groupId>
+	<artifactId>area</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<description>区域服务</description>
+	<modules>
+		<module>area-gen</module>
+		<module>area-api</module>
+		<module>area-bll</module>
+		<module>area-svr</module>
+		<module>area-svr-feign</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.github.rebue.area</groupId>
+				<artifactId>area-api</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.rebue.area</groupId>
+				<artifactId>area-bll</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
