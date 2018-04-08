@@ -1,6 +1,10 @@
 package rebue.area.svc.impl;
 
 
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,6 +30,8 @@ import rebue.robotech.svc.impl.MybatisBaseSvcImpl;
 @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
 public class AreAreaSvcImpl extends MybatisBaseSvcImpl<AreAreaMo, java.lang.Long, AreAreaMapper> implements AreAreaSvc {
 
+	private final static Logger _log = LoggerFactory.getLogger(AreAreaSvcImpl.class);
+	
     /**
      * @mbg.generated
      */
@@ -38,5 +44,35 @@ public class AreAreaSvcImpl extends MybatisBaseSvcImpl<AreAreaMo, java.lang.Long
         }
         return super.add(mo);
     }
+
+    /**
+     * 查询所有省份信息
+     * 2018年4月6日15:25:09
+     */
+	@Override
+	public List<AreAreaMo> selectProvinceAll() {
+		_log.info("开始查询所有的省份信息");
+		return _mapper.selectProvinceAll();
+	}
+
+	/**
+	 * 根据上级区域编号获取所有下级区域信息
+	 * 2018年4月6日15:29:37
+	 */
+	@Override
+	public List<AreAreaMo> selectLowerAreaAll(AreAreaMo record) {
+		_log.info("开始查询所有下级区域信息的编号为：{}", record.getAreaCode());
+		return _mapper.selectLowerAreaAll(record);
+	}
+
+	/**
+	 * 根据城市编号查询所有直辖镇信息
+	 * 2018年4月6日15:29:13
+	 */
+	@Override
+	public List<AreAreaMo> selectCountyAllByCityCode(AreAreaMo record) {
+		_log.info("开始查询所有直辖镇信息的城市编号为：{}", record.getAreaCode());
+		return _mapper.selectCountyAllByCityCode(record);
+	}
 
 }

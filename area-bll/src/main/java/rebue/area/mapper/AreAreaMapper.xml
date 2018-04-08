@@ -182,4 +182,19 @@
       </if>
     </where>
   </select>
+  
+  <!-- 获取所有省份信息 -->
+  <select id="selectProvinceAll" resultMap="BaseResultMap">
+  	SELECT * FROM ARE_AREA WHERE AREA_CODE LIKE '______' AND IS_DIS=0
+  </select>
+  
+  <!-- 根据区域上级编号获取所有下级区域信息 -->
+  <select id="selectLowerAreaAll" resultMap="BaseResultMap" parameterType="rebue.area.mo.AreAreaMo">
+  	SELECT * FROM ARE_AREA WHERE AREA_CODE LIKE '${areaCode}___' AND IS_DIS=0
+  </select>
+  
+  <!-- 根据城市编号获取所有直辖镇信息 -->
+  <select id="selectCountyAllByCityCode" resultMap="BaseResultMap" parameterType="rebue.area.mo.AreAreaMo">
+  	SELECT * FROM ARE_AREA WHERE AREA_CODE LIKE '${areaCode}______' AND IS_DIS=0
+  </select>
 </mapper>
