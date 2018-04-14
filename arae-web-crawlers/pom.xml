@@ -6,7 +6,7 @@
 		<artifactId>common-parent</artifactId>
 		<version>1.0.7</version>
 	</parent>
-	<artifactId>arae-web-crawlers</artifactId>
+	<artifactId>area-web-crawlers</artifactId>
 
 	<dependencies>
 		<dependency>

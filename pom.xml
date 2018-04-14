@@ -19,8 +19,6 @@
 		<module>area-bll</module>
 		<module>area-svr</module>
 		<module>area-svr-feign</module>
-		<module>area-crawler</module>
-		<module>arae-web-crawlers</module>
 	</modules>
 
 	<dependencyManagement>
