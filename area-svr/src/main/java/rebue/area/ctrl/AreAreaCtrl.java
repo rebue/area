@@ -49,7 +49,7 @@ public class AreAreaCtrl {
      * @date 2018年4月6日 下午3:33:28
      */
     @GetMapping("/are/area/lowerareaall")
-    List<AreAreaMo> selectLowerAreaAll(@RequestBody AreAreaMo qo) {
+    List<AreAreaMo> selectLowerAreaAll(AreAreaMo qo) {
     	_log.info("开始获取所有下级区域信息的参数为：{}" + qo.getAreaCode());
     	return svc.selectLowerAreaAll(qo);
     }
@@ -63,7 +63,7 @@ public class AreAreaCtrl {
      * @date 2018年4月6日 下午3:36:04
      */
     @GetMapping("/are/area/countyall")
-    List<AreAreaMo> selectCountyAllByCityCode(@RequestBody AreAreaMo qo) {
+    List<AreAreaMo> selectCountyAllByCityCode(AreAreaMo qo) {
     	_log.info("开始获取所有直辖镇信息的参数为：{}" + qo.getAreaCode());
     	return svc.selectCountyAllByCityCode(qo);
     }
