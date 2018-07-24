@@ -19,6 +19,7 @@
 		<module>area-bll</module>
 		<module>area-svr</module>
 		<module>area-svr-feign</module>
+		<module>area-ant</module>
 	</modules>
 
 	<dependencyManagement>
